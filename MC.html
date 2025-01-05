@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swightshome - Minecraft Vanilla Server</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/SwightsNotFound/swightshome/main/images/Logonowhite.png" type="image/x-icon">
-
+    <link rel="icon" href="https://raw.githubusercontent.com/SwightsNotFound/homelab/main/images/Logonowhite.png" type="image/x-icon">
     <style>
         /* General body styling */
         body {
@@ -28,6 +26,7 @@
             align-items: center;
             padding: 15px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative; /* This ensures the absolute positioning of the return button works correctly */
         }
 
         /* Styling for the links in the topbar */
@@ -44,6 +43,27 @@
 
         /* Hover effect for links */
         .topbar a:hover {
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Return button styling */
+        .topbar .return-button {
+            position: absolute;
+            left: 10px; /* Adjust this value to control how far from the left edge */
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect for return button */
+        .topbar .return-button:hover {
             background-color: #3498db;
             color: white;
             border-radius: 5px;
@@ -192,14 +212,11 @@
         }
     </style>
 </head>
-
 <body>
-
     <!-- Topbar with links -->
     <div class="topbar">
-        <a href="https://swightshome.xyz">Home</a>
-        <a href="Littlelink">Links</a>
-        <a href="Contact">Contact</a>
+        <a href="https://swightshome.xyz" class="return-button">Return</a>
+        <a href="https://homelab.swightshome.xyz">Homelab</a>
     </div>
 
     <!-- Main content -->
@@ -219,7 +236,7 @@
         </div>
 
         <div class="section">
-            <p>Once installed, download a client modpack <a href="https://raw.githubusercontent.com/SwightsNotFound/swightshome/main/Downloads/Swightshome.mrpack" download>here</a>, then import it into your launcher,
+            <p>Once installed, download a client modpack <a href="https://raw.githubusercontent.com/SwightsNotFound/homelab/main/Downloads/Swightshome.mrpack" download>here</a>, then import it into your launcher,
             once done simply boot up the new instance and press play in the menu.</p>
             <p style="font-size: 1rem; color: #7f8c8d;">These mods are all completely client side and help boost your in-game performance, it also has the one required mod Modflared.</p>
         </div>
@@ -238,8 +255,8 @@
             <div class="copy-container">
                 <input type="text" value="mc.swightshome.xyz" id="serverAddress" readonly>
                 <button onclick="copyToClipboard()">
-                    <img src="https://raw.githubusercontent.com/SwightsNotFound/swightshome/main/images/copy.svg" alt="Clipboard" id="clipboardIcon" class="clipboard-icon visible"/>
-                    <img src="https://raw.githubusercontent.com/SwightsNotFound/swightshome/main/images/copyconfirm.svg" alt="Checkmark" id="checkmarkIcon" class="copied"/>
+                    <img src="https://raw.githubusercontent.com/SwightsNotFound/homelab/main/images/copy.svg" alt="Clipboard" id="clipboardIcon" class="clipboard-icon visible"/>
+                    <img src="https://raw.githubusercontent.com/SwightsNotFound/homelab/main/images/copyconfirm.svg" alt="Checkmark" id="checkmarkIcon" class="copied"/>
                 </button>
             </div>
         </div>
@@ -248,7 +265,7 @@
     <!-- Footer -->
     <footer>
         <p>Hosted using <a href="https://pages.github.com/" target="_blank" rel="noopener" role="button">Github Pages</a> and <a href="https://www.cloudflare.com/" target="_blank" rel="noopener" role="button">Cloudflare</a>.</p>
-        <p><a href="https://github.com/SwightsNotFound/swightshome" target="_blank" rel="noopener" role="button">Source Code</a>. | <a href="Privacy">Privacy Policy</a>.</p>
+        <p><a href="https://github.com/SwightsNotFound/swightshome" target="_blank" rel="noopener" role="button">Source Code</a>. | <a href="">Privacy Policy</a>.</p>
     </footer>
 
 <script>
@@ -275,3 +292,5 @@
         }, 2000);
     }
 </script>
+</body>
+</html>

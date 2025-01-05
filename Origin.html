@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swightshome - Minecraft Origins Server</title>
-    <link rel="icon" href="https://raw.githubusercontent.com/SwightsNotFound/swightshome/main/images/Logonowhite.png" type="image/x-icon">
-
+    <title>Swightshome - Minecraft Vanilla Server</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/SwightsNotFound/homelab/main/images/Logonowhite.png" type="image/x-icon">
     <style>
         /* General body styling */
         body {
@@ -17,7 +15,7 @@
             color: #333;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Ensures the footer is pushed to the bottom */
+            min-height: 100vh; /* This ensures the footer stays at the bottom */
         }
 
         /* Topbar styling */
@@ -28,6 +26,7 @@
             align-items: center;
             padding: 15px 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative; /* This ensures the absolute positioning of the return button works correctly */
         }
 
         /* Styling for the links in the topbar */
@@ -49,13 +48,34 @@
             border-radius: 5px;
         }
 
+        /* Return button styling */
+        .topbar .return-button {
+            position: absolute;
+            left: 10px; /* Adjust this value to control how far from the left edge */
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effect for return button */
+        .topbar .return-button:hover {
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+        }
+
         /* Main content area */
         .content {
             max-width: 1000px;
             margin: 50px auto;
             text-align: center;
             padding: 20px;
-            flex-grow: 1; /* Ensures the content takes up the remaining space */
+            flex-grow: 1; /* This will ensure content fills available space */
         }
 
         .content h1 {
@@ -123,16 +143,80 @@
                 font-size: 1rem;
             }
         }
+
+        /* Modern input and button styling */
+        .copy-container {
+            position: relative;
+            width: 300px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .copy-container input {
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            width: 100%;
+            background-color: #fff;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .copy-container input:focus {
+            outline: none;
+            border-color: #2980b9;
+        }
+
+        .copy-container button {
+            padding: 10px;
+            background-color: transparent;
+            color: transparent;
+            border: none;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .copy-container button:hover {
+            color: #2980b9;
+        }
+
+        .copy-container button img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Visibility control for button states */
+        .copy-container .copied {
+            display: none;
+        }
+
+        .copy-container .copied.visible {
+            display: block;
+        }
+
+        .copy-container .clipboard-icon.visible {
+            display: block;
+        }
+
+        .copy-container .clipboard-icon.hidden {
+            display: none;
+        }
     </style>
 </head>
-
 <body>
-
     <!-- Topbar with links -->
     <div class="topbar">
-        <a href="https://swightshome.xyz">Home</a>
-        <a href="Littlelink">Links</a>
-        <a href="Contact">Contact</a>
+        <a href="https://swightshome.xyz" class="return-button">Return</a>
+        <a href="https://homelab.swightshome.xyz">Homelab</a>
     </div>
 
     <!-- Main content -->
@@ -146,7 +230,7 @@
         </div>
         
         <div class="section">
-            <p>Once installed, download the server's modpack <a href="https://raw.githubusercontent.com/SwightsNotFound/swightshome/main/Downloads/The Origins..mrpack" download>here</a>, then import it into your launcher,
+            <p>Once installed, download the server's modpack <a href="https://raw.githubusercontent.com/SwightsNotFound/homelab/main/Downloads/The Origins..mrpack" download>here</a>, then import it into your launcher,
             once done simply boot up the new instance and press play in the menu.</p>
         </div>
     </div>
@@ -154,7 +238,7 @@
     <!-- Footer -->
     <footer>
         <p>Hosted using <a href="https://pages.github.com/" target="_blank" rel="noopener" role="button">Github Pages</a> and <a href="https://www.cloudflare.com/" target="_blank" rel="noopener" role="button">Cloudflare</a>.</p>
-        <p><a href="https://github.com/SwightsNotFound/swightshome" target="_blank" rel="noopener" role="button">Source Code</a>. | <a href="Privacy">Privacy Policy</a>.</p>
+        <p><a href="https://github.com/SwightsNotFound/swightshome" target="_blank" rel="noopener" role="button">Source Code</a>. | <a href="">Privacy Policy</a>.</p>
     </footer>
 
 </body>
